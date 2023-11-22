@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UrbanSensor</title>
+
+    <!-- fuentes -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!--styles  -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- body -->
+    <div id="wrapper">
+
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-text mx-3">UrbanSensor</div>
+            </a>
+
+        
+            <hr class="sidebar-divider my-0">
+
+        
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span></a>
+            </li>
+
+        
+            <hr class="sidebar-divider">
+
+
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Cuentas</span>
+                </a>
+            </li>
+
+           
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-poll-h"></i>
+                    <span>Solicitudes</span>
+                </a>
+            </li>
+
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-users"></i>
+                    <span>Territoriales</span>
+                </a>
+            </li>
+
+            
+            <li class="nav-item active">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-th-list"></i>
+                    <span>Encuesta</span></a>
+            </li>
+
+            
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-tools"></i>
+                    <span>Ajustes</span></a>
+            </li>
+
+            
+            <hr class="sidebar-divider d-none d-md-block">
+
+            
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        
+
+        
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main-->
+            <div id="content">
+
+              <!-- barra navegacion-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                
+                    
+                    <div class="navbar-brand">
+                        <i class="fas fa-sun"></i> Buenos días administrador
+                    </div>
+                
+                    <ul class="navbar-nav ml-auto">
+                
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                
+                  
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Municipalidad</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                           
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Salir
+                                </a>
+                            </div>
+                        </li>
+                
+                    </ul>
+                </nav>
+                
+
+                <!-- Encuesta -->
+                <div class="container-fluid">
+ 
+                    <!-- Datos de encuesta -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">Listado de encuestas</h6>
+                            <a href="tablescrear.html" class="btn btn-primary"><i class="fas fa-plus me-1"></i> Crear Nueva Encuesta</a>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Categoria</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Categoria</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>Alumbrado público</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Veredas</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Postes</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Señaleticas</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Calles</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Semaforos</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Arboles caidos</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Derrumbe</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Autos</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fugas</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plazas</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Multicanchas</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hoyos en calles</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alumbrado publico</td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nombre encuesta </td>
+                                            <td>Categoria encuesta</td>
+                                            <td class="text-end">
+                                                <a href="tablesver.html" class="btn btn-sm btn-white text-success me-2"><i class="fas fa-search me-1"></i> Ver</a>
+                                                <a href="tablesedit.html" class="btn btn-sm btn-white text-dark me-2"><i class="far fa-edit me-1"></i> Editar</a>
+                                                <button class="btn btn-sm btn-white text-danger me-2" onclick="mostrarModal(this)"><i class="far fa-trash-alt me-1"></i> Borrar</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+                <!-- Modal de Advertencia -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            
+                            <div class="modal-header">
+                                <h4 class="modal-title">Encuesta</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <p>¿Desea eliminar encuesta?</p>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="eliminarElemento()">Eliminar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; UrbanSensor 2023</span>
+                    </div>
+                </div>
+            </footer>
+         
+
+        </div>
+    </div>
+    
+
+    <!-- boton Scroll-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Salir</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="login.html">Cerrar session</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- scripts-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    
+    <script>
+        function mostrarModal(elemento) {
+            // Guarda una referencia al botón que fue clicado
+            botonClicado = elemento;
+            $('#myModal').modal('show');
+        }
+    
+        function eliminarElemento() {
+            // Obtén la fila a la que pertenece el botón clicado
+            var fila = $(botonClicado).closest('tr');
+            
+            // Elimina la fila
+            fila.remove();
+    
+            // Cierra el modal
+            $('#myModal').modal('hide');
+        }
+    </script>
+
+</body>
+
+</html>
